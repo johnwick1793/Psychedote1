@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gita Quotes</title>
+    <style>
+    body{
+        background-image: url(../Assets/Images/mbt.jpg)  ;
+       background-image: ;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+      #quote-section {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: rgba(22, 14, 3, 0.477);
+        border: 1px solid #ccc;
+        font-size: 1.5rem;
+        text-align: center;
+        
+      }
+      button{
+        align-items: center;
+       background-color: rgba(178, 109, 19, 0.668);
+       border-radius: 25%;
+       padding: 2rem;
+       
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #extra{
+        margin: 2rem;
+        padding: 2rem;
+        background-color: rgba(106, 62, 0, 0.768);
+        border: 1px solid #ccc;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="quote-section"></div>
+   <div class="container">
+    <button onclick="displayQuote()">Show Quote</button>
+    <audio autoplay loop>
+		<source src="../Psychedote/Assets/Images/Otjanbird-Pt.-II.mp3" type="audio/mpeg">
+		
+	</audio>
+  </div>
+    <script>
+      const quotes = [
+        "यथा दीपो निवातस्थो नेङ्गते सोपमा स्मृता |   योगिनो यतचित्तस्य युञ्जतो योगमात्मन: || (Chapter 6 Verse 19) Translation -Just as a lamp in a windless place does not flicker, so the disciplined mind of a yogi remains steady in meditation on the Supreme. Meaning- In this verse, Shree Krishna gives the simile of the flame of a lamp. In the wind, the flame flickers naturally and is impossible to control. However, in a windless place, the flame becomes as steady as a picture. Similarly, the mind is fickle by nature and very difficult to control. But when the mind of a yogi is in enthralled union with God, it becomes sheltered against the winds of desire. Such a yogi holds the mind steadily under control by the power of devotion.",
+        "आत्मौपम्येन सर्वत्र समं पश्यति योऽर्जुन | सुखं वा यदि वा दु:खं स योगी परमो मत: || (Chapter 6 Verse 32) Translation - I regard them to be perfect yogis who see the true equality of all living beings and respond to the joys and sorrows of others as if they were their own. Explanation-We consider all the limbs of our body as ours, and are equally concerned if any of them is damaged. We are incontrovertible in the conviction that the harm done to any of our limbs is harm done to ourselves. Similarly, those who see God in all beings consider the joys and sorrows of others as their own. Therefore, such yogis are always the well-wishers of all souls and they strive for the eternal benefit of all. This is the sama-darśhana (equality of vision) of perfected yogis.",
+        "जितात्मन: प्रशान्तस्य परमात्मा समाहित: | शीतोष्णसुखदु:खेषु तथा मानापमानयो: || (Chapter 6 Verse 7) Tranlation-The yogis who have conquered the mind rise above the dualities of cold and heat, joy and sorrow, and honor and dishonor. Such yogis remain peaceful and steadfast in their devotion to God. Explanation-Shree Krishna explained in verse 2.14 that the contact between the senses and the sense objects gives the mind the experience of heat and cold, joy and sorrow. As long as the mind has not been subdued, a person chases after the sensual perceptions of pleasure and recoils from the perceptions of pain. The yogi who conquers the mind is able to see these fleeting perceptions as the workings of the bodily senses, distinct from the immortal soul, and thus, remain unmoved by them. Such an advanced yogi rises above the dualities of heat and cold, joy and sorrow, etc. There are only two realms in which the mind may dwell—one is the realm of Maya and the other is the realm of God. If the mind rises above the sensual dualities of the world, it can easily get absorbed in God. Thus, Shree Krishna has stated that an advanced yogi’s mind becomes situated in samādhi (deep meditation) upon God.",
+        "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन |   मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि || (Chapter 2 verse 47) Translation-You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction. Explanation: This shloka teaches us the importance of detachment from the results of our actions. We should focus on performing our duties without worrying about the outcome, as the outcome is not in our control. By doing so, we can avoid disappointment and stress caused by unrealistic expectations.",
+        "योगस्थ: कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय | सिद्ध्यसिद्ध्यो: समो भूत्वा समत्वं योग उच्यते || (Chapter 2 Verse 48) Translation: Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure. Such evenness of mind is called yoga.Explanation: This shloka highlights the importance of maintaining a state of equanimity while performing our duties. We should not be attached to success or failure, but instead focus on doing our best. This attitude helps us to maintain a peaceful state of mind, which can alleviate the symptoms of depression.",
+        "उद्धरेदात्मनात्मानं नात्मानमवसादयेत् | आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मन: ||  (Chapter 6 Verse 5) Translation: Let a man lift himself by himself; let him not lower himself. For he alone is the friend of himself, and he alone is the enemy of himself. Explanation: This shloka encourages self-reliance and self-improvement. We should not let ourselves be dragged down by negative thoughts or emotions, but instead work to uplift ourselves. By doing so, we become our own friend and ally, rather than our own worst enemy.",
+        "सुखदु:खे समे कृत्वा लाभालाभौ जयाजयौ |   ततो युद्धाय युज्यस्व नैवं पापमवाप्स्यसि ||(Chapter 2 Verse 38) Translation: Be steadfast in pleasure and pain, gain and loss, victory and defeat, and by doing so, you will not incur sin. Explanation: This shloka teaches us to maintain a balanced perspective in the face of life's ups and downs. We should not get too attached to pleasure or too discouraged by pain, but instead accept both with equanimity. This attitude can help us to avoid the negative thoughts and emotions that can contribute to depression.",
+        "कर्मण्यकर्म य: पश्येदकर्मणि च कर्म य: |  स बुद्धिमान्मनुष्येषु स युक्त: कृत्स्नकर्मकृत् || (Chapter 4 Verse 18) Translation: He who sees inaction in action, and action in inaction, is wise among men; he is a yogi and a performer of all actions. Explanation: This shloka highlights the importance of seeing beyond the surface level of our actions. We should not be attached to the outward appearance of our actions, but instead focus on the underlying intention behind them. By doing so, we can develop a deeper sense of purpose and fulfillment, which can help alleviate depression."
+      ];
+    
+      function displayQuote() {
+        const quoteSection = document.getElementById("quote-section");
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomIndex];
+    
+        quoteSection.innerHTML = `<blockquote>${quote}</blockquote>`;
+      }
+    </script>
+
+
+<div id="extra">
+   <h3>Overall, these shlokas offer guidance and wisdom for those struggling with
+     depression. By following the principles outlined in the Bhagavad Gita, individuals can learn 
+     to detach themselves from the outcomes of their actions, maintain a balanced perspective, and 
+     cultivate inner peace and resilience. This can help them to overcome feelings of sadness, hopelessness, 
+     and despair, and lead a more fulfilling and meaningful life.
+     It is important to note that the Bhagavad Gita is a complex text that can be interpreted in different ways, and
+     its teachings should not be seen as a substitute for professional medical advice or treatment for depression.
+     However, by incorporating these principles into their lives, individuals can develop a stronger sense of purpose, 
+     inner strength, and resilience, which can help them to overcome depression and other mental health challenges.
+     Bhagavad Gita is the primary text for metaphysical scientific information.
+     For philosophers, it is a sacred book of eastern philosophy.
+     For healers, it is a book of basics on metaphysical science for wholesome healing.
+     For spiritualists, it is a book of self-discovery and inner journey.
+     For anyone and everyone, it is a manual to operate this human body at its highest
+     efficiency.
+
+    Knowledge of following concepts mentioned in Bhagavad Gita aids in understanding the
+    broader perspective of wholesome healing.
+
+   <br> 1. The Supreme Soul
+    2. The spirit soul
+    3. Material nature
+    4. Time
+    5. Karma
+</h3>
+</div>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon/favicon-32x32.png" />
+    <link rel="manifest" href="./Assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./Assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Comfortaa:wght@300&family=Montserrat:wght@100&family=Patrick+Hand&family=Poppins:wght@200;300&family=Raleway:wght@300&family=Ubuntu:wght@300&family=Zen+Antique&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="./Assets/Css/style.css" />
+    <script src="./Script/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Psychedote-AnxietyTest</title>
+  </head>
+  <body class="main" onload="loaded()">
+    <div id="loader"></div>
+
+    <header>
+      <a href="./index.html"><img src="./Assets/Images/Psychedote.png" alt="Psychedote" /></a>
+      <nav class="navbar">
+        <div class="content">
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li class="items"><a href="./index.html">Home</a></li>
+            <li class="items"><a href="./info.html">Info</a></li>
+            <li class="items"><a href="./games.html">Fun</a></li>
+            <li class="items alt"><a href="./gethelp.html">GetHelp</a></li>
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="wid-main container">
+        <div class="test">
+            <h1>General Questionnaire</h1>
+            <form>
+              <p><label><input type="checkbox" name="q1" value="depression">I have been feeling sad, down, or hopeless most days.</label></p>
+              <p><label><input type="checkbox" name="q2" value="anxiety">I feel anxious or worried about things more than usual.</label></p>
+              <p><label><input type="checkbox" name="q3" value="depression">I have been having trouble sleeping or sleeping too much.</label></p>
+              <p><label><input type="checkbox" name="q4" value="anxiety">I feel restless, irritable, or on edge.</label></p>
+              <p><label><input type="checkbox" name="q5" value="depression">I have experienced a significant change in appetite or weight.</label></p>
+              <p><label><input type="checkbox" name="q6" value="depression">I have difficulty concentrating or making decisions.</label></p>
+              <p><label><input type="checkbox" name="q7" value="depression">I feel fatigued or lacking in energy.</label></p>
+              <p><label><input type="checkbox" name="q8" value="depression">I have lost interest in activities I used to enjoy.</label></p>
+              <p><label><input type="checkbox" name="q9" value="anxiety">I feel like I'm under a lot of pressure or stress.</label></p>
+              <p><label><input type="checkbox" name="q10" value="anxiety">I have difficulty relaxing or calming down.</label></p>
+              <!-- <p><button type="submit" id="submit">Submit</button></p> -->
+              <button class="anxiety" type="submit" id="submit"><strong><i>Submit</i></strong></button>
+              <button class="anxiety" onclick="window.location.href='/anxietytest.html'"><strong><i>Anxiety test</i></strong></button>
+              <button class="anxiety" onclick="window.location.href='/depressiontest.html'"><strong><i>Depression test</i></strong></button>
+            </form>
+            <p id="result">
+             
+            </p>
+          
+            <script src="quiz.js"></script>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>Made with <i class="fa fa-heart pulse"></i> by Team Psychedote</p>
+    </footer>
+    <script src="./Script/script.js"></script>
+    <script src="./Script/quiz.js"></script>
+  </body>
+</html>

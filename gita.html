@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gita Quotes</title>
+    <style>
+    body{
+        background-image: url(../Assets/Images/mbt.jpg)  ;
+       background-image: ;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+      #quote-section {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: rgba(22, 14, 3, 0.477);
+        border: 1px solid #ccc;
+        font-size: 1.5rem;
+        text-align: center;
+        
+      }
+      button{
+        align-items: center;
+       background-color: rgba(178, 109, 19, 0.668);
+       border-radius: 25%;
+       padding: 2rem;
+       
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #extra{
+        margin: 2rem;
+        padding: 2rem;
+        background-color: rgba(106, 62, 0, 0.768);
+        border: 1px solid #ccc;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="quote-section"></div>
+   <div class="container">
+    <button onclick="displayQuote()">Show Quote</button>
+    <audio autoplay loop>
+		<source src="../Psychedote/Assets/Images/Otjanbird-Pt.-II.mp3" type="audio/mpeg">
+		
+	</audio>
+  </div>
+    <script>
+      const quotes = [
+        "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन | मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि || (Chapter 2, Verse 47). Translation- You have a right to perform your prescribed duty, but you are not entitled to the fruits of action. Never consider yourself to be the cause of the results of your activities, and never be attached to inaction. Explanation- This verse encourages detachment from outcomes and encourages the individual to focus on performing their duties without being attached to the results. This can help in reducing anxiety and fear of failure.",
+        "योगस्थ: कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय |  सिद्ध्यसिद्ध्यो: समो भूत्वा समत्वं योग उच्यते || (Chapter 2, Verse 48).Translation- Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure. Such evenness of mind is called yoga. Explanation- This verse emphasizes the importance of equanimity in the face of both success and failure, and how it can lead to a state of yoga, or union with the divine. This can help in reducing anxiety and fear of both success and failure.",
+        "मयि सर्वाणि कर्माणि संन्यस्याध्यात्मचेतसा |निराशीर्निर्ममो भूत्वा युध्यस्व विगतज्वर: ||(Chapter 3, Verse 30). Translation- O Arjuna, surrendering all your works unto Me, with full knowledge of Me, without desires for profit, with no claims to proprietorship, and free from lethargy, fight.Explanation- This verse emphasizes the importance of surrendering all actions to the divine, and performing them without being attached to the results or feeling a sense of ownership over them. This can help in reducing anxiety and fear by letting go of control and trusting in a higher power.",
+        "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज |  अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुच: || (Chapter 18, Verse 66) Translation- Abandon all varieties of religion and just surrender unto Me. I shall deliver you from all sinful reactions. Do not fear. Explanation-This verse emphasizes the importance of surrendering to the divine, and how doing so can alleviate fear and anxiety. It also emphasizes the idea that there is nothing to fear when one is under the protection of the divine. ",
+        "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदु: खदा: |   आगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत|| (Chapter 2, Verse 14)Translation- O son of Kunti, the contacts of the senses with their objects, which give rise to cold, heat, pleasure, and pain, are transitory and fleeting. Endure them bravely, O Arjuna.Meaning- This shloka reminds us that the pleasures and pains of life are temporary and will pass. By cultivating endurance and bravery, we can face difficulties with a calm mind and overcome anxiety and fear.",
+        "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु |  मामेवैष्यसि सत्यं ते प्रतिजाने प्रियोऽसि मे || ||(Chapter 18, Verse 65) Translation-Always think of Me and become My devotee. Worship Me and offer your homage unto Me. Thus you will come to Me without fail. I promise you this because you are My very dear friend. Explanation- This shloka encourages us to focus on God and become His devotee. By offering our devotion and worship to God, we can find inner peace and overcome anxiety and fear.",
+        "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावक: | न चैनं क्लेदयन्त्यापो न शोषयति मारुत: || (Chapter 2, Verse 23)Translation-Weapons cannot shred the soul, nor can fire burn it. Water cannot wet it, nor can the wind dry it. Meaning: The soul can never be cut to pieces by any weapon, nor burned by fire, nor moistened by water, nor withered by the wind.",
+        "अर्जुन उवाच |   स्थितप्रज्ञस्य का भाषा समाधिस्थस्य केशव | स्थितधी: किं प्रभाषेत किमासीत व्रजेत किम् || (Chapter 2, Verse 54)     Translation: What is the description of a person of steady wisdom who is fixed in the trance of yoga? How does he speak, and what is his language? How does he sit, and how does he walk? Meaning: This verse encourages us to strive for a state of inner calm and wisdom. It helps us to let go of our fears and anxieties by reminding us to focus on developing our inner state of being.(Chapter 2, Verse 54) Translation- What is the description of a person of steady wisdom who is fixed in the trance of yoga? How does he speak, and what is his language? How does he sit, and how does he walk? Explanation- This verse encourages us to strive for a state of inner calm and wisdom. It helps us to let go of our fears and anxieties by reminding us to focus on developing our inner state of being.",
+        "श्रीभगवानुवाच | पार्थ नैवेह नामुत्र विनाशस्तस्य विद्यते | न हि कल्याणकृत्कश्चिद्दुर्गतिं तात गच्छति || (Chapter 6 ,Verse 40) Translation -The Supreme Lord said: O Parth, one who engages on the spiritual path does not meet with destruction either in this world or the world to come. My dear friend, one who strives for God-realization is never overcome by evil. Explation -The word Tāta is a word of endearment, which literally means “son.” By addressing Arjun as Tāta in this verse, Shree Krishna is demonstrating his affection for him. The son is affectionately addressed as Tāta. The Guru is like a father to his disciple, and hence the Guru too sometimes affectionately addresses the disciple as Tāta. Here, by displaying his affection and grace toward Arjun, Shree Krishna wishes to indicate that God takes care of those who tread on his path. They are dear to God because they engage in the most auspicious kind of activity, and “the doer of good never comes to grief.” This verse asserts that God preserves the devotee both in this world and the world hereafter. This pronouncement is a great assurance to all spiritual aspirants. Shree Krishna then goes on to explain how God preserves the efforts of the yogi who does not complete the journey in the present life.",
+        "साङ्ख्ययोगौ पृथग्बाला: प्रवदन्ति न पण्डिता: |एकमप्यास्थित: सम्यगुभयोर्विन्दते फलम् || (Chapter 5 Verse 4) Translation-Only the ignorant speak of sānkhya (renunciation of actions, or karm sanyās) and karm yog (work in devotion) as different. Those who are truly learned say that by applying ourselves to any one of these paths, we can achieve the results of both. Explation -The wise sees knowledge and action as one; they see truly who see unity in knowledge and action."
+
+        
+        
+      ];
+    
+      function displayQuote() {
+        const quoteSection = document.getElementById("quote-section");
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomIndex];
+    
+        quoteSection.innerHTML = `<blockquote>${quote}</blockquote>`;
+      }
+    </script>
+
+
+<div id="extra">
+   <h3> Bhagavad Gita is the primary text for metaphysical scientific information.
+    For philosophers, it is a sacred book of eastern philosophy.
+    For healers, it is a book of basics on metaphysical science for wholesome healing.
+    For spiritualists, it is a book of self-discovery and inner journey.
+    For anyone and everyone, it is a manual to operate this human body at its highest
+    efficiency.
+    Knowledge of following concepts mentioned in Bhagavad Gita aids in understanding the
+    broader perspective of wholesome healing.
+   <br> 1. The Supreme Soul
+    2. The spirit soul
+    3. Material nature
+    4. Time
+    5. Karma
+</h3>
+</div>
